@@ -2,12 +2,25 @@
 ====================
 
 
-This is the Repository created by Zhenyi Huang.
-In this assignment, I have attempted the Task 1 and Task 2. For better access to the assignment, I will suggest you to [__download__](https://github.com/STAT545-UBC-students/hw06-janehuang1647/blob/master/assignment_6.html) the html file below, since the github can not render the html file properly.
+__This is the Repository created by Zhenyi Huang.__
+In this assignment, I have various features shown as follow: 
 
-### Goal of the assignment
-* __Character data__ Read and work the exercises in the Strings chapter or R for Data Science.
-* __Writing functions__ Write one (or more) functions that do something useful to pieces of the Gapminder or Singer data. It is logical to think about computing on the mini-data frames corresponding to the data for each specific country, location, year, band, album, 鈥? This would pair well with the prompt below about working with a nested data frame, as you could apply your function there.
+## Features
+
+* Add an option to sort the results table by price.
+* Add an image of the BC Liquor Store to the UI.
+* Use the DT package to turn the current results table into an interactive table.
+* Add parameters to the plot.
+* Place the plot and the table in separate tabs.
+* When the user wants to see only wines, show a new input that allows the user to filter by sweetness level. Only show this input if wines are selected.
+
+## Shiny Apps
+
+Please check this link [BC Liquor Store App](https://janehuang1647.shinyapps.io/bcl_assignment8/) for the better view of the app. 
+
+## Files
+
+For the original code, please check this link [Original link](https://github.com/STAT545-UBC-students/hw08-janehuang1647/blob/master/bcl_assignment8/app.R).
 
 
 

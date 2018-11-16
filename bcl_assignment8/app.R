@@ -9,8 +9,8 @@
 
 library(shiny)
 library(tidyverse)
+library(rsconnect)
 
- # includeCSS("style.css")
 
 
 
@@ -35,15 +35,18 @@ ui <- fluidPage(
       checkboxInput("sortInput", "Sort results by price",
                     value= FALSE,
                     width= NULL),
+      # Add an option to let user choose whether they would like to narrow down by the sweetness of wine
       
       checkboxInput("sweetSort", "Narrow down by sweetness",
                     value= FALSE,
                     width= NULL),
       
+      # the sweetness slider only showed while the Wine is chosen.
       conditionalPanel(
         condition = "input.typeinput == 'WINE'",
         sliderInput("sweetness", "Wine Sweetness Level", min = 0, max = 10, value = c(3,5))),
       
+      # user can pick their desire color for the histogram bars. 
       colourpicker::colourInput("col", "Choose colour", "#505F8F")
       
     ),
@@ -51,6 +54,7 @@ ui <- fluidPage(
       tabsetPanel(
         tabPanel("Plot", plotOutput("price_hist")),
         tabPanel("Summary Table", DT::dataTableOutput("NEWTABLE")),
+        # insert an image in a separate panel
         tabPanel("BC liquor store image", img(src = "BCLS.jPG"))
       )
       
@@ -81,8 +85,9 @@ server <- function (input,output){
   })
   
  
- # Use the DT package to turn the current results table into an interactive table.
-  
+# Use the DT package to turn the current results table into an interactive table.
+# the sweetness only narrow down while the users choose to do so.
+# the table only sorted by price while the users choose to do so.
   output$NEWTABLE <- DT::renderDataTable( 
     if(input$sortInput==TRUE & input$sweetSort == TRUE){
       bcl_filtered() %>% 
@@ -98,9 +103,7 @@ server <- function (input,output){
          filter(Sweetness <= input$sweetness[2], Sweetness >= input$sweetness[1])
      }
     else  bcl_filtered()
-# 
-#     bcl_filtered() %>% 
-#       filter(Sweetness == input$sweetness)
+
   )
   
   
