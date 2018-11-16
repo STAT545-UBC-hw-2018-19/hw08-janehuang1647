@@ -10,8 +10,8 @@
 library(shiny)
 library(tidyverse)
 
-a <- 5
-print(a^2)
+ # includeCSS("style.css")
+
 
 
 bcl <- read.csv("bcl-data.csv", stringsAsFactors = FALSE)
@@ -21,6 +21,7 @@ ui <- fluidPage(
              windowTitle = "BCL app"),
   sidebarLayout(
     sidebarPanel(
+
       # Add this slider to the sidebar panel so that the user can select a price range:
       
       sliderInput("priceInput", "Select your desired price range.",
@@ -28,15 +29,36 @@ ui <- fluidPage(
       
       radioButtons("typeinput", "Select your alcoholic beverage type",
                    choices=c("BEER", "REFRESHMENT", "SPIRITS", "WINE"),
-                   selected= "WINE")
+                   selected= "WINE"),
+      
+      # Add an option to sort the results table by price.
+      checkboxInput("sortInput", "Sort results by price",
+                    value= FALSE,
+                    width= NULL),
+      
+      checkboxInput("sweetSort", "Narrow down by sweetness",
+                    value= FALSE,
+                    width= NULL),
+      
+      conditionalPanel(
+        condition = "input.typeinput == 'WINE'",
+        sliderInput("sweetness", "Wine Sweetness Level", min = 0, max = 10, value = c(3,5))),
+      
+      colourpicker::colourInput("col", "Choose colour", "#505F8F")
       
     ),
     mainPanel(
-      plotOutput("price_hist"),
-      # plotOutput("plot2"),
-      tableOutput("NEWTABLE")
+      tabsetPanel(
+        tabPanel("Plot", plotOutput("price_hist")),
+        tabPanel("Summary Table", DT::dataTableOutput("NEWTABLE")),
+        tabPanel("BC liquor store image", img(src = "BCLS.jPG"))
+      )
+      
+      
+      
     )
-  ))
+  )
+  )
 
 # Define server logic required to draw a histogram
 # use input$... to access the input of some specific term
@@ -54,15 +76,35 @@ server <- function (input,output){
   output$price_hist <- renderPlot({
     bcl_filtered() %>% 
       ggplot(aes(Price))+
-      geom_histogram()
+      geom_histogram(binwidth = 1,fill = input$col)
     
   })
   
-  # output$plot2 <- renderPlot(ggplot2::qplot(bcl$Price))  # can be other plot functions
-  output$NEWTABLE <- renderTable(
-    bcl_filtered()  
-    
+ 
+ # Use the DT package to turn the current results table into an interactive table.
+  
+  output$NEWTABLE <- DT::renderDataTable( 
+    if(input$sortInput==TRUE & input$sweetSort == TRUE){
+      bcl_filtered() %>% 
+        arrange(desc(Price)) %>% 
+        filter(Sweetness <= input$sweetness[2], Sweetness >= input$sweetness[1])
+    }
+    else if (input$sortInput==TRUE & input$sweetSort == FALSE){
+     bcl_filtered() %>% 
+       arrange(desc(Price))
+     }
+    else if (input$sortInput== FALSE & input$sweetSort == TRUE){
+       bcl_filtered() %>% 
+         filter(Sweetness <= input$sweetness[2], Sweetness >= input$sweetness[1])
+     }
+    else  bcl_filtered()
+# 
+#     bcl_filtered() %>% 
+#       filter(Sweetness == input$sweetness)
   )
+  
+  
+  
 } 
 
 # Run the application 
