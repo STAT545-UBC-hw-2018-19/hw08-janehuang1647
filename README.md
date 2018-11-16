@@ -23,11 +23,8 @@ Please check this link [BC Liquor Store App](https://janehuang1647.shinyapps.io/
 For the original code, please check this link [Original link](https://github.com/STAT545-UBC-students/hw08-janehuang1647/blob/master/bcl_assignment8/app.R).
 
 
+## Reference
+* Copyright of the BC liquor Store image: 
 
+https://www.google.ca/search?q=bc+liquor+store&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjP29-YndfeAhWnhVQKHVyyCVIQ_AUIESgE&biw=1280&bih=530#imgrc=0L-2j93Px5x9YM
 
-
-|    List of the Files         | 
-|--------------------|
-| [assignment_6.html](https://github.com/STAT545-UBC-students/hw06-janehuang1647/blob/master/assignment_6.html)|
-| [assignment 6.rmd](https://github.com/STAT545-UBC-students/hw06-janehuang1647/blob/master/assignment%206.rmd)|
-| [assignment_6.md](https://github.com/STAT545-UBC-students/hw06-janehuang1647/blob/master/assignment_6.md)
