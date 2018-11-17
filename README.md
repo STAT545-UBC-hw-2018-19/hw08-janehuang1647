@@ -7,7 +7,7 @@ __This is the Repository created by Zhenyi Huang.__
 This assignment has adapted an abridged version of the [stat545.com shiny tutorial](http://stat545.com/shiny01_activity.html) written by Dean Attali, 
 In this assignment, I have added various features shown as follow: 
 
-## Features :smile
+## Features
 
 * Add an option to sort the results table by price.
 * Add an image of the BC Liquor Store to the UI.
