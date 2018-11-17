@@ -3,10 +3,11 @@
 
 
 __This is the Repository created by Zhenyi Huang.__
+
 This assignment has adapted an abridged version of the [stat545.com shiny tutorial](http://stat545.com/shiny01_activity.html) written by Dean Attali, 
 In this assignment, I have added various features shown as follow: 
 
-## Features
+## Features :smile
 
 * Add an option to sort the results table by price.
 * Add an image of the BC Liquor Store to the UI.
@@ -21,7 +22,7 @@ Please check this link [BC Liquor Store App](https://janehuang1647.shinyapps.io/
 
 ## Files
 
-For the original code, please check this link [Original link](https://github.com/STAT545-UBC-students/hw08-janehuang1647/blob/master/bcl_assignment8/app.R).
+For the original code, please check this link for the [Original file](https://github.com/STAT545-UBC-students/hw08-janehuang1647/blob/master/bcl_assignment8/app.R).
 
 
 ## Reference
