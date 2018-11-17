@@ -3,7 +3,8 @@
 
 
 __This is the Repository created by Zhenyi Huang.__
-In this assignment, I have various features shown as follow: 
+This assignment has adapted an abridged version of the [stat545.com shiny tutorial](http://stat545.com/shiny01_activity.html) written by Dean Attali, 
+In this assignment, I have added various features shown as follow: 
 
 ## Features
 
