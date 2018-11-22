@@ -11,7 +11,7 @@ In this assignment, I have added various features shown as follow:
 
 * Add an option to sort the results table by price. By checking the below box, we can sort the table by descending price.
 
-![](1.JPG)
+<img src="1.JPG" width="200">
 
 * Add an image of the BC Liquor Store to the UI. The following image is shown in the __BC Liquor Store Image__.
 
@@ -19,23 +19,23 @@ In this assignment, I have added various features shown as follow:
 
 * Use the DT package to turn the current results table into an interactive table. The table now is interactive and different functions are shown on the bar above the table:
 
-![](3.JPG)
+<img src="3.JPG" width="700">
 
 * Add parameters to the plot. With the below feature, the user could change the colour of the barplot to the colur they want.
 
-![](4.JPG)
+<img src="4.JPG" width="300">
 
 * Place the plot and the table in separate tabs. Separate panels are used for better display of the apps. Users could switch between these three panels by clicking the below bar:
 
-![](5.JPG)
+<img src="5.JPG" width="300">
 
 * When the user wants to see only wines, show a new input that allows the user to filter by sweetness level. Only show this input if wines are selected. The sweetness level would be an valid option if the wine button and the sort by sweetness buttons are chosen.
 
-![](6b.JPG)
+<img src="6b.JPG" width="200">
 
 Users can define the range of sweetness level they would like to view using the slide bar.
 
-![](6a.JPG)
+<img src="6a.JPG" width="300">
 
 
 
